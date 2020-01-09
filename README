@@ -1,0 +1,22 @@
+Le projet se lance à l'adresse localhost:8080/Chateau
+
+L'idée pour cette exercice a été d'utiliser le système des promises Javascript en chaine.
+
+Au départ j'ai initialisé une connexion avec les modules axios pour le fetch API et cors pour la connexion multiple API
+Cette connexion va chercher le point d'entrée principal de l'API à savoir Entry.
+
+Grace aux promises j'ai alors récupèré les données renvoyées par mon get sur entry.
+Dans la resolve de la promise j'ai récupèré les données d'adresse des rooms pour les utiliser dynamiquement et ainsi 
+voyager de room en room.
+
+Le système de chaine de promise permet de d'effectuer de nouvelles connexions que lorsque le palier précédent a effectué 
+toutes ses connexions et ce de manière asynchrone si jamais une requête prend plus de temps qu'un autre.
+
+A chaque palier sur le même principe, j'ai récupèré les informations de coffres, puis dans une boucle forEach j'ai itéré sur chaque coffres pour l'ouvrir et
+vérifié le présence ou non de la string "is empty" dans le status du coffre.
+
+L'idée et de push dans un array les coffres plaines et dans un arret par étage les coffres vides.
+
+Pour l'instant mon code se balade dans l'API palier par palier jusqu'au dernier en vérifiant les coffres présents
+mais il survient de nombreux problèmes de connexions et je ne sais pas les régler.
+
